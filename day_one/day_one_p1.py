@@ -15,5 +15,5 @@ for line in lines:
     elvesInventories.setdefault(currentIndex, 0)
     elvesInventories[currentIndex] += calories
 
-thoughestElf = max(elvesInventories, key=elvesInventories.get)
-print(f"Elf {thoughestElf} carried {elvesInventories[thoughestElf]}")
+toughestElf = max(elvesInventories, key=elvesInventories.get)
+print(f"Elf {toughestElf} carried {elvesInventories[toughestElf]}")
