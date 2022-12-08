@@ -1,4 +1,4 @@
-﻿namespace Day02;
+﻿namespace day02;
 
 public class PartOne
 {
