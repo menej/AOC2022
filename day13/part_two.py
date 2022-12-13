@@ -36,16 +36,29 @@ def checking(left_list, right_list, trigger):
 
 
 with open("input.txt", "r") as f:
-    lines = f.read().strip().split("\n")
+    lines = list(filter(lambda a: a != "", f.read().strip().split("\n")))
+
+lines.append("[[2]]")
+lines.append("[[6]]")
+lines.append("[[3]]")
 
 sum_indices = 0
 right_order = False
+xs = []
 
-for index, [left, right] in enumerate(zip(lines[0::3], lines[1::3])):
-    left = json.loads(left)
-    right = json.loads(right)
+for step in range(len(lines) - 1):
+    min_idx = step
 
-    right_order = checking(left, right, False)
-    if right_order:
-        sum_indices += index + 1
-print(sum_indices)
+    for j in range(step + 1, len(lines)):
+        a = lines[min_idx]
+        b = lines[j]
+        if checking(json.loads(lines[j]), json.loads(lines[min_idx]), False):
+            min_idx = j
+    lines[step], lines[min_idx] = lines[min_idx], lines[step]
+
+oke = 1
+for index, line in enumerate(lines):
+    if line == "[[2]]" or line == "[[6]]":
+        oke *= (index + 1)
+
+print(oke)
