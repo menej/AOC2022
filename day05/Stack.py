@@ -1,4 +1,4 @@
-from day_five.Node import Node
+from day05.Node import Node
 
 
 class Stack:
