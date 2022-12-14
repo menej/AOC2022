@@ -1,4 +1,4 @@
-﻿using DayFour;
+﻿using day04;
 
 string[] lines = File.ReadAllLines("input.txt");
 

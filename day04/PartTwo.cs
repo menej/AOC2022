@@ -1,10 +1,10 @@
-﻿namespace DayFour;
+﻿namespace day04;
 
-public static class PartOne
+public static class PartTwo
 {
-    public static int PartOneSolution(string[] lines)
+    public static int PartTwoSolution(string[] lines)
     {
-        int counterFullyContains = 0;
+        int counterOverlaps = 0;
 
         foreach (var line in lines)
         {
@@ -30,10 +30,13 @@ public static class PartOne
                 secondSections.Add(i);
             }
 
-            if (firstSections.IsSubsetOf(secondSections) || secondSections.IsSubsetOf(firstSections))
-                counterFullyContains++;
+            var sectionsIntersection = new HashSet<int>(firstSections);
+            sectionsIntersection.IntersectWith(secondSections);
+            
+            if (sectionsIntersection.Any())
+                counterOverlaps++;
         }
 
-        return counterFullyContains;
+        return counterOverlaps;
     }
 }
