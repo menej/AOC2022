@@ -1,4 +1,4 @@
-﻿using DaySix;
+﻿using day06;
 
 string lines = File.ReadAllText("input.txt").ReplaceLineEndings("");
 

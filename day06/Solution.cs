@@ -1,4 +1,4 @@
-﻿namespace DaySix;
+﻿namespace day06;
 
 public class Solution
 {
